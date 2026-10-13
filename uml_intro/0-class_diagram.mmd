@@ -1,0 +1,38 @@
+
+    class Book {
+        +title: str
+        +author: str
+        +available: bool
+        +mark_as_unavailable()
+        +mark_as_available()
+    }
+
+    class User {
+        +name: str
+        +email: str
+    }
+
+    class Loan {
+        +start_date: str
+        +end_date: str
+        +book: Book
+        +user: User
+        +closed: bool
+        +close_loan()
+    }
+
+    class Library {
+        +books: list
+        +users: list
+        +loans: list
+        +add_book(book)
+        +register_user(user)
+        +create_loan(book, user, start_date, end_date)
+    }
+
+    Library "1" o-- "*" Book : manages
+    Library "1" o-- "*" User : registers
+    Library "1" o-- "*" Loan : manages
+    Loan "*" --> "1" Book : references
+    Loan "*" --> "1" User : borrowed by
+
