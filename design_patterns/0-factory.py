@@ -46,8 +46,8 @@ def main() -> None:
     print(factory.create("bus").mode())
     print(factory.create("train").mode())
     print(factory.create("bike").mode())
-    print(factor.register_kind("scooter", Scooter))
-    print(factor.create("scooter").mode())
+    print(factory.register_kind("scooter", Scooter))
+    print(factory.create("scooter").mode())
 
     # TODO: register Scooter with factory.register_kind(...)
     # TODO: print factory.create("scooter").mode()
