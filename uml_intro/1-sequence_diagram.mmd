@@ -1,0 +1,25 @@
+
+    actor User
+    participant Library
+    participant Book
+    participant Loan
+
+    User->>Library: create_loan(book, user, start_date, end_date)
+    Library->>Book: Check availability
+    Book-->>Library: available = True
+    Library->>Loan: Create Loan(book, user, dates)
+    Loan->>Book: mark_as_unavailable()
+    Book-->>Loan: available = False
+    Loan-->>Library: Return loan
+    Library-->>User: Loan created
+
+    Note over User,Book: Book is now unavailable
+
+    User->>Loan: close_loan()
+    Loan->>Book: mark_as_available()
+    Book-->>Loan: available = True
+    Loan->>Loan: closed = True
+    Loan-->>User: Loan closed
+
+    Note over User,Book: Book is available again
+
