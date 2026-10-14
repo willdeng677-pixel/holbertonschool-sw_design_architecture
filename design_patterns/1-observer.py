@@ -50,7 +50,6 @@ class SmsObserver:
 
 def main() -> None:
     subject = NewsSubject()
-
     log = LogObserver()
     email = EmailObserver()
     sms = SmsObserver()
