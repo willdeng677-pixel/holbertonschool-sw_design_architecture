@@ -1,5 +1,7 @@
 
 #!/usr/bin/env python3
+# Demonstrate the Observer Design Pattern
+
 from __future__ import annotations
 from typing import Protocol
 
@@ -40,7 +42,7 @@ class EmailObserver:
 
 
 class SmsObserver:
-    # Observer that prints SMS notifications.
+    # Observer that prints SMS notifications
 
     def update(self, topic: str, data: str) -> None:
         print(f"sms:{topic}={data}")
@@ -64,3 +66,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
