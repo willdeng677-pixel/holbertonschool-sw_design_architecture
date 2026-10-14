@@ -40,7 +40,7 @@ class EmailObserver:
 
 
 class SmsObserver:
-    """Observer that prints SMS notifications."""
+    # Observer that prints SMS notifications.
 
     def update(self, topic: str, data: str) -> None:
         print(f"sms:{topic}={data}")
